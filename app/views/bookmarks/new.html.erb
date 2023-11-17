@@ -2,8 +2,7 @@
 
 <%= simple_form_for [@list, @bookmark] do |f| %>
   <%= f.association :movie %>
-  <%= f.input :comment %>
+  <%= f.input  :comment, label: 'Description' %>
   <%= f.submit %>
 <% end %>
-l
-<%= link_to "Lists", lists_path %>
+<%= link_to "Back", lists_path %>

@@ -1,5 +1,47 @@
-<h1>All Lists</h1>
 
-<% @lists.each do |list| %>
-  <p><%= link_to list.name, list_path(list) %></p>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="https://files.cults3d.com/uploaders/20952150/illustration-file/3ff506ac-83d8-40ab-b474-3ebc2c727b7a/pngwing.com-2022-02-20T081900.534.png" />
+</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <%= link_to "All Lists", lists_path, class: "btn btn-secondary" %>
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://wallpapers.com/images/featured/movie-9pvmdtvz4cb0xl37.jpg);">
+  <div class="container">
+    <h1>MoviesDo <strong>A</strong> to <strong>Z</strong>!</h1>
+    <p>Find the best movies online no matter the genre</p>
+  </div>
+</div>
+
+<div class="container">
+<div class="cards">
+  <% @lists.each do |list| %>
+    <%= link_to list_path(list) do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <%= list.name %>
+      </div>
+      <% end %>
+  <% end %>
+</div>
+</div>
+
+
+<%= link_to new_list_path do %>
+<div class= "d-grid gap-1 col-1 mx-auto pt-5">
+<button type="button" class="btn btn-primary btn-lg p-2">Create
+</button>
+</div>
 <% end %>
