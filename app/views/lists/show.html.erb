@@ -27,10 +27,11 @@
 
 
 
-
-<div class="card" style="width: 20rem;">
+<div class="card-grid">
     <% @list.bookmarks.each do |bookmark| %>
-  <img class="card-img-top" src="https://wallpapers.com/images/featured/movie-9pvmdtvz4cb0xl37.jpg" alt="Card image cap">
+<div class="movie-card">
+<div class="backgoundimg" style=""></div>
+  <%# <img class="card-img-top" src="https://wallpapers.com/images/featured/movie-9pvmdtvz4cb0xl37.jpg" alt="Card image cap"> %>
   <div class="card-body">
     <h4 class="card-title"><%= bookmark.movie.title %></h4>
     <p class="card-text">Description: <%= bookmark.comment %></p>
@@ -39,6 +40,7 @@
      <i class="fa-solid fa-trash"></i>
     <% end %>
   </div>
+</div>
   <% end %>
 </div>
 
@@ -50,4 +52,9 @@
 </div>
 <% end %>
 
-<%= link_to 'Back', lists_path %>
+<%= link_to lists_path do %>
+<div class= "d-grid gap-1 col-1 mx-auto pt-5">
+<button type="button" class="btn btn-danger btn-lg p-2">Back
+</button>
+</div>
+<% end %>
